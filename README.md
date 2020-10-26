@@ -30,4 +30,4 @@ Images from [Unsplash](https://unsplash.com).
 
 ## Misc
 
-Follow Sahkyo: [Twitter](http://www.twitter.com/sahkyovision), [Dribbble](http://www.dribbble.com/sahkyo), [GitHub](https://github.com/sahkyo), [Instagram](https://www.instagram.com/sahkyovision)
+Follow Sahkyo: [Twitter](http://www.twitter.com/sahkyovision), [Dribbble](http://www.dribbble.com/sahkyo), [Behance](https://github.com/sahkyovision), [Instagram](https://www.instagram.com/sahkyovision)
