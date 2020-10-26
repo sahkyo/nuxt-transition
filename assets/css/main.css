@@ -1,0 +1,163 @@
+:root {
+  --text: #212121;
+}
+
+@font-face {
+  font-family: "Velour";
+  src: url("../font/Velour-Light.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Velour";
+  src: url("../font/Velour-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e5e5e5;
+  font-family: "Velour", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+img {
+  position: relative;
+  width: 100vw;
+  height: auto;
+}
+
+.navigation {
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.external a {
+  padding: 0.5rem;
+}
+
+.navigation use {
+  fill: var(--text);
+  transition: all 1s ease;
+}
+
+.article .navigation use {
+  fill: white;
+}
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.thumbnails {
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5vw;
+}
+
+.city {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.london {
+  width: 332px;
+  height: 560px;
+}
+
+.london img {
+  height: 100%;
+  width: auto;
+}
+
+.paris {
+  height: auto;
+  width: 100vw;
+  margin: auto -50vw 0;
+}
+
+.ny {
+  width: 328px;
+  height: 537px;
+  margin-top: 8rem;
+  justify-content: center;
+}
+
+.ny img {
+  height: 100%;
+  width: auto;
+}
+
+.cover {
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.article__content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.back__link {
+  padding: 1rem 0;
+  display: block;
+}
+
+.article__content p {
+  font-size: 18px;
+}
+
+.article__content h1 {
+  margin-bottom: 24px;
+  font-size: 48px;
+}
+
+@media screen and (min-width: 1300px) {
+  .thumbnails {
+    display: flex;
+  }
+  .cover {
+    height: 537px;
+  }
+  .paris {
+    height: 537px;
+  }
+}
