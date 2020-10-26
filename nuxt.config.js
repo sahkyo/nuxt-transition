@@ -4,12 +4,12 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Transitions de pages animées | Sahkyo',
+    title: 'Slick Image Resize Page Transition with Nuxt & VueJS | Sahkyo',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Animation d\'une vignette en image de couverture avec VueJS & Nuxt.' },
-      { name: 'keywords', content: 'javascript, gsap, animation, transition, image, vignette, couverture, vuejs, nuxt' },
+      { hid: 'description', name: 'description', content: 'How to create a Thumbnail to Full-width Cover Image Animation when switching routes with VueJS & Nuxt.' },
+      { name: 'keywords', content: 'javascript, gsap, animation, transition, image, thumbnail, cover, vuejs, nuxt' },
       { name: 'author', content: 'Sahkyo' },
     ],
     link: [

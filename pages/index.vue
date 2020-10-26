@@ -1,16 +1,26 @@
 <template>
   <div class="container">
     <nuxt-link to="/article">
-      <div class="city paris">
-        <img src="@/assets/img/paris.jpg" alt="" />
+      <div class="city paris" ref="wrapper">
+        <img
+          src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2852&q=80"
+          alt="paris"
+          ref="img"
+        />
       </div>
     </nuxt-link>
-    <div class="thumbnails">
+    <div class="thumbnails" ref="others">
       <div class="city london">
-        <img src="@/assets/img/london.jpg" alt="" />
+        <img
+          src="https://images.unsplash.com/photo-1514557718210-26e452f8fab0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+          alt="london"
+        />
       </div>
       <div class="city ny">
-        <img src="@/assets/img/ny.jpg" alt="" />
+        <img
+          src="https://images.unsplash.com/photo-1518235506717-e1ed3306a89b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+          alt="new york"
+        />
       </div>
     </div>
   </div>
@@ -22,72 +32,49 @@ import gsap from "gsap";
 export default {
   data() {
     return {
-      link: null,
-      img: null,
-      aspect: null,
-      rect: null,
+      aspectRatio: null,
       thumbnailWidth: 340,
-      thumbnailHeight: 589
+      thumbnailHeight: 589,
+      coverWidth: null,
+      coverHeight: null
     };
   },
 
   mounted() {
+    this.aspectRatio = this.$refs.img.naturalWidth / this.$refs.img.naturalHeight;
+    this.coverHeight = this.$refs.wrapper.getBoundingClientRect().height;
+
     this.setup();
-
+    
     if (process.client) {
-      window.addEventListener("resize", () => {
-        const proportions = {
-          scaleX: (this.thumbnailWidth / window.innerWidth) * this.aspect,
-          scaleY: this.thumbnailHeight / 537,
-          y: window.innerHeight / 2 - this.rect.top - this.rect.height / 2
-        };
-
-        gsap.set(this.link, {
-          scaleX: proportions.scaleX,
-          scaleY: proportions.scaleY,
-          y: proportions.y
-        });
-
-        gsap.set(this.img, {
-          scaleX:
-            (((1 / proportions.scaleX) * this.thumbnailWidth) /
-              this.img.clientHeight) *
-            this.aspect,
-          scaleY:
-            ((1 / proportions.scaleY) * this.thumbnailHeight) /
-            this.img.clientHeight
-        });
-      });
+      window.addEventListener("resize", this.setup);
     }
   },
 
   methods: {
     setup() {
-      this.link = document.querySelector(".paris");
-      this.img = this.link.querySelector("img");
-      this.aspect = this.img.naturalWidth / this.img.naturalHeight;
-      this.rect = this.link.getBoundingClientRect();
+      this.coverWidth = window.innerWidth;
 
       const proportions = {
-        scaleX: (this.thumbnailWidth / window.innerWidth) * this.aspect,
-        scaleY: this.thumbnailHeight / 537,
-        y: window.innerHeight / 2 - this.rect.top - this.rect.height / 2
+        scaleX: (this.thumbnailWidth / this.coverWidth) * this.aspectRatio,
+        scaleY: this.thumbnailHeight / this.coverHeight,
+        y: window.innerHeight / 2 - this.coverHeight / 2,
       };
 
-      gsap.set(this.link, {
+      gsap.set(this.$refs.wrapper, {
         scaleX: proportions.scaleX,
         scaleY: proportions.scaleY,
-        y: proportions.y
+        y: proportions.y,
       });
 
-      gsap.set(this.img, {
+      gsap.set(this.$refs.img, {
         scaleX:
           (((1 / proportions.scaleX) * this.thumbnailWidth) /
-            this.img.clientHeight) *
-          this.aspect,
+            this.$refs.img.clientHeight) *
+          this.aspectRatio,
         scaleY:
           ((1 / proportions.scaleY) * this.thumbnailHeight) /
-          this.img.clientHeight
+          this.$refs.img.clientHeight,
       });
     }
   },
@@ -97,29 +84,22 @@ export default {
     mode: "out-in",
     enter(el, done) {
       gsap.from(el, {
-        autoAlpha: 0
-      })
+        autoAlpha: 0,
+      });
     },
     leave(el, done) {
       gsap
         .timeline()
-        .to(".london", {
-          autoAlpha: 0
+        .to(".thumbnails", {
+          autoAlpha: 0,
         })
-        .to(
-          ".ny",
-          {
-            autoAlpha: 0
-          },
-          0
-        )
         .to(
           ".paris img",
           {
             scaleX: 1,
             scaleY: 1,
             ease: "expo.inOut",
-            duration: 1
+            duration: 1,
           },
           0
         )
@@ -132,11 +112,11 @@ export default {
             scaleY: 1,
             ease: "expo.inOut",
             duration: 1,
-            onComplete: done
+            onComplete: done,
           },
           0
         );
-    }
-  }
+    },
+  },
 };
 </script>

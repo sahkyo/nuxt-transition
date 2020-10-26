@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="cover">
-      <img src="@/assets/img/paris.jpg" alt="" />
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2852&q=80" alt="paris" />
     </div>
     <article class="article__content">
       <nuxt-link to="/" class="back__link">

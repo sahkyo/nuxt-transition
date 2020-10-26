@@ -7,7 +7,7 @@
     </nuxt-link>
     <div class="external">
       <a
-        href="https://github.com/sahkyo"
+        href="https://github.com/sahkyo/nuxt-transition"
         target="_blank"
         rel="noopener noreferrer"
       >
