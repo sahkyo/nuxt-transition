@@ -16,7 +16,7 @@
         </svg>
       </a>
       <a
-        href="https://medium.com/@sahkyovision"
+        href="https://sahkyovision.medium.com/slick-image-resize-page-transition-with-nuxt-vuejs-d903025d799f"
         target="_blank"
         rel="noopener noreferrer"
       >
