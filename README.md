@@ -4,7 +4,7 @@ How to create a Thumbnail to Full-width Cover Image Animation when switching rou
 
 ![Page Transition Demo](https://sahkyo.s3.eu-west-3.amazonaws.com/Page_Transition_Capture.png)
 
-[Article on Medium](https://medium.com/@sahkyovision)
+[Article on Medium](https://link.medium.com/Zl1yg9KfVab)
 
 [Demo](https://nuxt-transition.netlify.app/)
 
