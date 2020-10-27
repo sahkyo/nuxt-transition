@@ -14,5 +14,7 @@
     "imagesloaded": "^4.1.4",
     "nuxt": "^2.14.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.4.0"
+  }
 }

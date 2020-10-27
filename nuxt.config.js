@@ -14,9 +14,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [
-      { async: true, href: "https://www.googletagmanager.com/gtag/js?id=G-0TTBF58CRJ" }
     ]
   },
 
@@ -24,14 +21,19 @@ export default {
   css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ["plugins/ga.client.js"],
+  plugins: [],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    '@nuxtjs/google-analytics'
   ],
+
+  googleAnalytics: {
+    id: 'G-0TTBF58CRJ'
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
