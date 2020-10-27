@@ -1,10 +1,10 @@
 <template>
   <nav class="navigation">
-    <nuxt-link to="/">
+    <a href="https://sahkyo.com" target="_blank" rel="noopener noreferrer">
       <svg viewBox="0 0 32 32" width="24" height="24">
         <use href="@/assets/img/sahkyo.svg#sahkyo" />
       </svg>
-    </nuxt-link>
+    </a>
     <div class="external">
       <a
         href="https://github.com/sahkyo/nuxt-transition"
@@ -21,7 +21,7 @@
         rel="noopener noreferrer"
       >
         <svg viewBox="0 0 24 24" width="24" height="24">
-          <use href="@/assets/img/medium.svg#medium" fill="#ffffff" />
+          <use href="@/assets/img/medium.svg#medium" />
         </svg>
       </a>
     </div>
