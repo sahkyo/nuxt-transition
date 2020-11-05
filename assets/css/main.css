@@ -3,18 +3,6 @@
   --bg: #e5e5e5;
 }
 
-@font-face {
-  font-family: "Velour";
-  src: url("../font/Velour-Light.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Velour";
-  src: url("../font/Velour-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-
 * {
   margin: 0;
   padding: 0;
